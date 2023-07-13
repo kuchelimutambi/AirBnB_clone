@@ -2,6 +2,7 @@
 """ Serializes instances to a JSON file and deserializes JSON file to instances """
 import json
 from models.base_model import BaseModel
+from models.user import User
 
 
 class FileStorage:
@@ -32,5 +33,7 @@ class FileStorage:
                 for key, value in objs_dictionary.items():
                     if value.get('__class__') == 'BaseModel':
                         FileStorage.__objects[key] = BaseModel(**value)
+                    elif value.get('__class__') == 'User':
+                        FileStorage.__objects[key] = User(**value)
         except FileNotFoundError:
             pass

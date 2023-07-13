@@ -4,11 +4,12 @@
 import cmd
 from models.base_model import BaseModel
 from models.__init__ import storage
+from models.user import User
 
 class BnBConsole(cmd.Cmd):
     """ Interactive point for the program """
     prompt = '(bnb)'
-    classes = ['BaseModel']
+    classes = ['BaseModel', 'User']
 
     def do_quit(self, line):
         """ Exits the console """
