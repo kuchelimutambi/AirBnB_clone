@@ -11,9 +11,9 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
-class BnBConsole(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
     """ Interactive point for the program """
-    prompt = '(bnb)'
+    prompt = '(hbnb)'
     classes = ['BaseModel', 'User', 'State', 'City', 'Amenity', 'Place', 'Review']
 
     def do_quit(self, line):
@@ -143,4 +143,4 @@ class BnBConsole(cmd.Cmd):
             print('** no instance found **')
 
 if __name__ == '__main__':
-    BnBConsole().cmdloop()
+    HBNBCommand().cmdloop()
